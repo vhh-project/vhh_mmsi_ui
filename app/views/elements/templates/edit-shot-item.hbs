@@ -1,0 +1,42 @@
+<div id="edit-shot-item-{{shot.in}}" class="edit-shot-item{{#if shot.gap}} gap{{/if}}{{#if shot.isConfirmed}} confirmed{{/if}}" data-in="{{shot.in}}" data-out="{{shot.out}}"{{#if shot.type}} data-type="{{shot.type}}"{{/if}}>
+  <div class="thumbs">
+    <div class="shot-in" data-frame="{{shot.in}}">
+      <div class="shot-image" style="background-image:url({{shot.thumbIn}});"></div>
+      <span>{{shot.in}}</span>
+    </div>
+    {{#unlessEqual shot.in shot.out}}
+      <div class="shot-out" data-frame="{{shot.out}}">
+        <div class="shot-image" style="background-image:url({{shot.thumbOut}});"></div>
+        <span>{{shot.out}}</span>
+      </div>
+    {{/unlessEqual}}
+  </div>
+  {{#if shot.gap}}
+    <div class="edit-shot-details">
+      <button type="button" class="btn btn-primary button-create-shot-from-gap">{{_ 'button.create_shot_from_gap'}}</button>
+    </div>    
+  {{else}}
+    <div class="edit-shot-details">
+      <div class="mb-1">
+        {{#if shot.type}}<span class="badge badge-pill badge-secondary badge-shot p-2"><span class="badge-before"><i class="fa fa-video mr-1"></i></span>{{_s 'shot.' shot.type}}</span>{{/if}}
+        {{#unless shot.isConfirmed}}
+          <button type="button" class="btn btn-primary btn-sm button-change-shot-type">{{_ 'button.change_shot_type'}}</button>
+          <button type="button" class="btn btn-primary btn-sm button-delete-shot" title="{{_ 'tip.delete_shot'}}"><i class="fa fa-trash"></i></button>
+        {{/unless}}
+        <button type="button" class="btn btn-primary btn-sm button-toggle-icon{{#if shot.isConfirmed}} on{{/if}} button-toggle-confirm" title="{{#if shot.isConfirmed}}{{_ 'tip.unconfirm_shot'}}{{else}}{{_ 'tip.confirm_shot'}}{{/if}}"><i class="fa fa-check"></i><i class="fa fa-times "></i></button>
+      </div>
+      <div class="info">
+        Annotator: {{#if shot.autoRef}}<span class="badge badge-pill badge-secondary">auto</span> {{/if}}{{shot.annotator}}<br />
+        Creation: {{shot.creationTs}}<br />
+        Value Source: {{shot.valueSource}}<br />
+      </div>
+    </div>
+    {{#if canMerge}}
+      <div class="edit-shots-intermediate-buttons">
+        {{#if canMoveUp}}<button type="button" class="btn btn-sm btn-primary button-move-up-shots" title="{{_ 'tip.shot_move_up'}}"><i class="fa fa-arrow-up"></i></button>{{/if}}
+        {{#if canMoveDown}}<button type="button" class="btn btn-sm btn-primary button-move-down-shots" title="{{_ 'tip.shot_move_down'}}"><i class="fa fa-arrow-down"></i></button>{{/if}}
+        <button type="button" class="btn btn-sm btn-primary button-merge-shots" data-in="{{shot.in}}">{{_ 'button.merge_shots'}}</button>
+      </div>
+    {{/if}}
+  {{/if}}
+</div>

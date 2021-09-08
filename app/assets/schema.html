@@ -1,0 +1,318 @@
+<!doctype html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>VHH MMSI - Schema Generator</title>
+  <meta name="viewport" content="width=device-width">
+  <script src="/mmsi/js/vendor.js"></script>
+  <script src="/mmsi/js/app.js"></script>
+  <style>
+    html, body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-family: sans-serif;
+      color: #111;
+      margin: 0;
+    }
+
+    .left {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 340px;
+      height: 100%;
+      background-color: #eee;
+      padding: 16px;
+      border-right: 1px solid #ccc;
+    }
+
+    .left > a {
+      color: #459;
+      text-decoration: none;
+    }
+
+    .left > .main-link {
+      display: inline-block;
+      padding-bottom: 0.5em;
+    }
+
+    .right {
+      padding-left: 372px;
+    }
+
+    h1, h2, h3 {
+      padding-left: 1rem;
+    }
+
+    @media print {
+      .left {
+        display: none;
+      }
+
+      .right {
+        padding-left: 0;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-spacing: 0;
+    }
+
+    th {
+      text-align: left;
+      background-color: #aaa;
+    }
+
+    th, td {
+      padding: 0.5em;
+    }
+
+    th:first-child,
+    td:first-child {
+      width: 40%;
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      border-left: 1px solid #ccc;
+    }
+
+    tr.header-row {
+      background-color: #eee;
+    }
+
+    tr.header-row:not(:first-child) > td {
+      border-top: 5px solid #ccc;     
+    }
+
+    .key-item {
+      color: #061;
+    }
+
+    ul.warning {
+      background-color: #cc0;
+      margin: 1em;
+      padding: 1em 2em;
+    }
+
+    ul.warning > li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    .warnings-badge {
+      display: inline-block;
+      background-color: #cc0;
+      border-radius: 4px;
+      padding: 4px 8px;
+      color: #000;
+      line-height: 1em;
+      font-size: 14px;
+      margin: 1px 0 1px 0.25em;
+    }
+
+    .attr-badge {
+      display: inline-block;
+      background-color: #777;
+      border-radius: 4px;
+      padding: 4px 8px;
+      color: #fff;
+      line-height: 1em;
+      font-size: 14px;
+      margin: 1px 0 1px 0.25em ;
+    }
+
+    .text-muted {
+      color: #777;
+    }
+  </style>
+  <script>
+    window.settings = {
+      videoUrlBase: '/mmsi/api/ca/',
+      baseUrl: '/mmsi/',
+      apiUrl: '/mmsi/api/',
+      cookie: null
+    }
+
+    ObjectDefinitions = require('models/object-definitions');
+    Lang = require('models/lang');
+    Model = require('models/base/model');
+
+    $(function() {
+      $.ajaxSetup({cache: false});
+      window.lang = new Lang('en', window.settings.baseUrl);
+
+      lang.load(function() {
+        $.ajax({
+          type: 'POST',
+          url: window.settings.apiUrl + 'ca/service/find/ca_lists?q=*',
+          contentType: 'application/json',
+          data: JSON.stringify({
+            bundles: {
+              'ca_lists.list_code': {
+                returnAsArray: false
+              }
+            }
+          }),
+          beforeSend: function(xhr) {
+            token = Model.getXSRFCookie()
+            if (token) {
+              xhr.setRequestHeader('X-XSRF-TOKEN', token);
+            }
+          },
+          success: function(response) {
+            window.caLists = response;
+
+            var objectTypes = [
+              { key: 'ca-object', name: 'Object' },
+              { key: 'ca-entity', name: 'Agent' },
+              { key: 'ca-occurrence', name: 'Event' },
+              { key: 'ca-place', name: 'Place' },
+              { key: 'ca-collection', name: 'Collection' }
+            ];
+
+            loadObjectType(objectTypes, 0);
+          }
+        });
+      });
+    });
+
+    function loadObjectType(objectTypes, index) {
+      if (index >= objectTypes.length) return;
+
+      var objectType = objectTypes[index];
+      var Model = require('models/' + objectType.key);
+      var model = new Model()
+
+      model.loadCaDefinition(function() {
+        processDefinition(model, objectType.name);
+        loadObjectType(objectTypes, index + 1);
+      });
+    }
+
+    function processDefinition(model, name) {
+      definitions = model.getObjectGroup();
+      html = []
+      leftHtml = []
+
+      let warningsString = '';
+
+      if (ObjectDefinitions.warnings[model.objectType]) {
+        warningsString = '<span class="warnings-badge">' + ObjectDefinitions.warnings[model.objectType].length + ' Warnings</span>'
+      }
+
+      html.push('<div class="schema-element" data-type="' + model.objectType + '">');
+      html.push('<h1 id="bookmark-' + model.objectType + '">' + name + ' <span class="key-item">(' + model.objectType + ')</span></h1>');
+      leftHtml.push('<a class="main-link" href="#bookmark-' + model.objectType + '"><strong>' + name + ' (' + model.objectType + ')</strong>' + warningsString + '</a><br />');
+
+      if (ObjectDefinitions.warnings[model.objectType]) {
+        html.push('<ul class="warning">');
+
+        for (warning of ObjectDefinitions.warnings[model.objectType]) {
+          html.push('<li>' + warning + '</li>')
+        }
+
+        html.push('</ul>');
+      }
+
+      for (definitionKey in definitions) {
+        let definition = definitions[definitionKey];
+        html.push('<h2 id="bookmark-' + model.objectType + '-' + definitionKey + '">' + lang._(definition.label) + ' <span class="key-item">(' +  definitionKey + ')</span></h2>');
+        leftHtml.push('<a href="#bookmark-' + model.objectType + '-' + definitionKey + '">' + lang._(definition.label) + ' (' +  definitionKey + ')</a><br />');
+
+        for (group of definition.groups) {
+          if (group.type == 'data') {
+            html.push('<h3>' + definitionKey + ' / ' + lang._(group.label) + '</h3>');
+            html.push('<table>');
+            html.push('<thead><tr>');
+            html.push('<th>Label</th><th>Key</th><th>Definition</th>');
+            html.push('</tr></thead><tbody>');
+            for (attrGroupKey of group.attrGroups) {
+              if (attrGroupKey != 'idno') {
+                let attrGroup = ObjectDefinitions.attrGroups[attrGroupKey];
+                if (attrGroup) {
+                  html.push('<tr class="header-row">');
+                  if (!attrGroup.label) {
+                    if (attrGroup.labelCode) {
+                      attrGroup.label = '<em class="text-muted">(' +  lang._(attrGroup.labelCode) + ')</em>';
+                    } else {
+                      attrGroup.label = '-';
+                    }
+                  }
+                  html.push('<td><strong>' + attrGroup.label + '</strong></td>');
+                  html.push('<td><strong class="key-item">' + attrGroup.key + '</strong></td><td>');
+                  
+                  if (ObjectDefinitions.attrWarnings[model.objectType] && ObjectDefinitions.attrWarnings[model.objectType][definitionKey] && ObjectDefinitions.attrWarnings[model.objectType][definitionKey][attrGroup.key]) {
+                    html.push('<span class="warnings-badge">' + ObjectDefinitions.attrWarnings[model.objectType][definitionKey][attrGroup.key].join('<br />') + '</span>');
+                  }
+
+                  if (attrGroup.single) {
+                    html.push('<span class="attr-badge">single</span>');
+                  }
+                  if (attrGroup.minItems) {
+                    html.push('<span class="attr-badge">min items: ' + attrGroup.minItems + '</span>');
+                  }
+                  html.push('</td>');
+                  html.push('</tr>');
+
+                  for (attrItem of attrGroup.items) {
+                    html.push('<tr>');
+                    if (!attrItem.label) {
+                      if (attrItem.labelCode) {
+                        attrItem.label = '<em class="text-muted">(' + lang._(attrItem.labelCode) + ')</em>';
+                      } else {
+                        attrItem.label = '-';
+                      }
+                    }
+                    html.push('<td>' + attrItem.label + '</td>');
+                    html.push('<td class="key-item">' + attrItem.key + '</td>');
+                    html.push('<td>');
+                    if (attrItem.type) {
+                      html.push('<span class="attr-badge">' + attrItem.type + '</span>');
+                    }
+                    if (attrItem.required) {
+                      html.push('<span class="attr-badge">required</span>');
+                    }
+                    if (attrItem.lookup) {
+                      html.push('<span class="attr-badge">lookup</span>');
+                    }
+                    if (attrItem.listId) {
+                      let listId = '' + attrItem.listId;
+                      let listItem = _.find(caLists.results, function(item) {
+                        return item.list_id === listId;
+                      });
+                      if (listItem) {
+                        html.push('<span class="attr-badge">List: ' + listItem.display_label + ' (' + listItem['ca_lists.list_code'] + ', ' + attrItem.listId + ')</span>');
+                      } else {
+                        html.push('<span class="attr-badge">List: ' + attrItem.listId + '</span>');
+                      }
+                      
+                    }
+                    html.push('</td>');
+                    
+                    html.push('</tr>');
+                  }
+                }
+              }
+            }
+            html.push('</tbody></table>');
+          }
+        }
+      }
+
+      html.push('</div>');
+      leftHtml.push('<br /><br />');
+      $('.right').append(html.join(''));
+      $('.left').append(leftHtml.join(''));
+    }
+  </script>
+</head>
+<body>
+  <div class="left"></div>
+  <div class="right"></div>
+</body>
+</html>

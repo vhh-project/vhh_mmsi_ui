@@ -1,0 +1,32 @@
+<div class="summary-navigation d-print-none">
+  {{#if tree.model}}
+    <div class="summary-nav-item object-creation" data-id="{{tree.model.id}}">
+      <div class="summary-nav-labels">{{{tree.label}}}</div>
+      {{#unless isChild}}{{childLink 'details#object' tree.model.id}}{{/unless}}
+    </div>
+  {{/if}}
+  {{#if tree.manifestations.length}}
+    <div class="summary-manifestations">
+      {{#each tree.manifestations as | manifestation manifestationIndex |}}
+        {{#if manifestation.model}}
+          <div class="summary-nav-item object-manifestation" data-id="{{manifestation.model.id}}" >
+            <div class="summary-nav-labels">{{{manifestation.label}}}</div>
+            {{#unless @root.isChild}}{{childLink 'details#object' manifestation.model.id}}{{/unless}}
+          </div>
+        {{/if}}
+        {{#if manifestation.items.length}}
+          <div class="summary-items">
+            {{#each manifestation.items as | item itemIndex | }}
+              <div class="summary-nav-item object-item" data-id="{{item.model.id}}">
+                {{#if item.thumb}}<div class="summary-nav-item-image" style="background-image: url({{thumb}});"></div>{{/if}}
+                <div class="summary-nav-labels">{{{item.label}}}</div>
+                {{#unless @root.isChild}}{{childLink 'details#object' item.model.id}}{{/unless}}
+              </div>
+            {{/each}}
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+<div class="summary-content"></div>

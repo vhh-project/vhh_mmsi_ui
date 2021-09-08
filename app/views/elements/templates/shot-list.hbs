@@ -1,0 +1,24 @@
+<table>
+{{#each shots}}
+  <tr class="shot-list-row shot-list-item-{{@index}}" data-index="{{@index}}">
+    <td>
+      <strong>{{shotNumber}}</strong>
+    </td>
+    <td>
+      <img src="{{thumbIn}}" />
+    </td>
+    <td>
+      <button type="button" class="btn btn-xs btn-in-out btn-primary button-in-point" data-value="{{in}}"><span>IN</span><span>{{in}}</span></button><br />
+      <span>{{smpteIn}}</span>
+    </td>
+    <td>
+      <button type="button" class="btn btn-xs btn-in-out btn-primary button-out-point" data-value="{{out}}"><span>OUT</span><span>{{out}}</span></button><br />
+      <span>{{smpteOut}}</span>
+    </td>
+    <td>
+      {{#if shotType}}<span class="badge badge-pill badge-secondary badge-shot has-tip" data-title="{{_ 'tip.shot_type'}}"><span class="badge-before"><i class="fa fa-video mr-1"></i></span>{{_s 'shot.' shotType}}</span>{{/if}}
+      {{#if isAuto}}<span class="badge badge-pill badge-secondary">auto</span>{{/if}}
+    </td>
+  </tr>
+{{/each}}
+</table>

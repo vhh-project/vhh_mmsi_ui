@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/"><img height="58" src="{{baseUrl}}images/vhh-logo.png" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar-main">
+    <ul class="navbar-nav ml-auto mr-auto">
+      <li class="nav-item pr-5">
+        <a class="nav-link active" href="{{url 'home#map'}}">{{_ 'label.map'}}</a>
+      </li>
+      <li class="nav-item pr-5">
+        <a class="nav-link" href="{{url 'search#objects'}}">{{_ 'label.object' 0}}</a>
+      </li>
+      <li class="nav-item pr-5">
+        <a class="nav-link" href="{{url 'search#agents'}}">{{_ 'label.agent' 0}}</a>
+      </li>
+      <li class="nav-item pr-5">
+        <a class="nav-link" href="{{url 'search#events'}}">{{_ 'label.event' 0}}</a>
+      </li>
+      <li class="nav-item pr-5">
+        <a class="nav-link" href="{{url 'search#places'}}">{{_ 'label.place' 0}}</a>
+      </li>
+      <li class="nav-item pr-5">
+        <a class="nav-link" href="{{url 'search#collections'}}">{{_ 'label.collection' 0}}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item text-white"><i class="fa fa-user"></i> {{userMe.name}}</li>
+    </ul>
+    {{!-- <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a id="header-button-logout" role="button" class="nav-link" href="javascript:void(0);">{{_ 'header.logout'}}</a></li>
+    </ul> --}}
+  </div>
+</nav>

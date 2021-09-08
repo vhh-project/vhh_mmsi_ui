@@ -1,0 +1,46 @@
+<div class="row detail-row" data-index="{{index}}">
+  <div class="col">
+    <div class="card">
+      {{#unlessEqual label false}}
+        <div class="card-header" id="detail-card-{{index}}">
+          <h2 class="mb-0">{{label}}{{#if definition.description}} {{tooltipIcon definition.description}}{{/if}}{{#if showCounterBadge}} <span class="badge badge-secondary">{{definition.attrs.length}}</span>{{/if}}</h2>
+          {{#if canAdd}}<button class="btn btn-sm btn-primary button-new-attr float-right d-print-none" data-index="{{index}}"><i class="fa fa-plus"></i> <span>{{_ 'button.add'}} {{#if label}}{{label}}{{/if}}</span></button>{{/if}}
+        </div>
+      {{/unlessEqual}}
+      <div class="card-body">
+        {{#if feedback}}
+          <div class="row pb-0">
+            <div class="col-12">{{{feedback}}}</div>
+          </div>
+        {{/if}}
+        {{#each definition.attrs as | attr attrIndex |}}
+          <div class="row detail-attr-row">
+            {{#each attr.attr as | attrValue valueIndex |}}
+              <div class="col-lg{{#if attrValue.defItem.cols}}-{{attrValue.defItem.cols}}{{/if}}{{#if defItem.offset}} offset-lg-{{defItem.offset}}{{/if}}">
+                <label><small class="text-muted">{{attrValue.defItem.label}}{{#if attrValue.defItem.description}} {{tooltipIcon attrValue.defItem.description}}{{/if}}</small></label>
+                {{#if attrValue.defItem.strong}}
+                  <strong>{{{attrValue.value}}}</strong>
+                {{else}}
+                  {{{attrValue.value}}}
+                {{/if}}
+              </div>
+              {{#if attrValue.defItem.break}}<div class="w-100"></div>{{/if}}
+            {{/each}}
+
+            {{#if attr.valueSource}}
+              <div class="detail-value-source col-lg-12">
+                <label><em><small class="text-muted">{{_ 'label.value_source'}}</small></em></label>
+                <div><em>{{{createLinksFromUrls attr.valueSource}}}</em></div>
+              </div>
+            {{/if}}
+            
+            <div class="detail-edit-buttons d-print-none">
+              {{#if @root.canDelete}}<button class="btn btn-danger btn-sm button-detail-delete" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" title="{{_ 'tip.delete'}}"><i class="fa fa-trash"></i></button>{{/if}}
+              {{#if @root.canEdit}}<button class="btn btn-primary btn-sm button-detail-edit" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" title="{{_ 'tip.edit'}}"><i class="fa fa-edit"></i></button>{{/if}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

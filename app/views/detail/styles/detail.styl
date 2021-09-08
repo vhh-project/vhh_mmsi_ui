@@ -1,0 +1,267 @@
+.detail-view
+  height 100%
+  
+  h2
+    font-size 1.5em
+
+  .create-dropdown-view
+    position absolute
+    top 6px
+    right 15px
+    
+.details-navigation
+  position fixed
+  top calc(135px + 1em)
+  bottom 1em
+  left 1em
+  width calc(200px - 1em)
+  padding 1em
+  background-color white
+  
+  h3
+    font-size 1.25em
+    margin 0 15px 0 15px 
+  
+.detail-view-wrapper
+  height 100%
+  
+.details-content
+  margin-left 200px
+  margin-top -3px
+  padding-top 1em
+  height 100%
+  
+.nav-item-summary
+  border-bottom 1px solid #ccc
+  margin-bottom 1rem
+  
+.detail-view.show-summary
+  .details-navigation
+    display none
+    
+  .details-content
+    margin-left 0
+
+#tab-detail a
+  cursor default
+  
+.map-geocode
+  width 100%
+  height 450px
+  border 1px solid #777
+  z-index 1
+  
+.detail-row
+  position relative
+  margin-bottom 1em
+
+  h2
+    font-size 1em
+    
+  label
+    display block
+    margin-bottom 0
+    
+  .button-new-attr
+  .button-new-relation
+    position absolute
+    min-width 150px
+    right 1em
+    top 0.5em
+    
+  .card-header
+    background-color #615e5e
+    color #fff
+    
+  .card-body
+    padding 0
+    
+    .row
+      padding 1em
+    
+.summary-row
+  + .summary-row
+    padding-top 8px
+    border-top 1px solid #e3e2e2
+    
+  &:last-child
+    margin-bottom 0
+    
+.summary-list:not(.show-all) .summary-row.text-muted
+  display none
+  
+.summary-relation-item + .summary-relation-item
+  margin-top 0.5rem
+  
+.summary-value-source
+  font-size 0.85em
+  color #777
+  font-style italic
+    
+.detail-attr-row
+  position relative
+  
+  &:not(:last-child)
+    border-bottom 1px solid #e3e2e2
+    
+  &:last-child
+    margin-bottom -0.5rem
+    
+  > div
+    margin-bottom 0.5rem
+    
+.detail-edit-buttons
+  position absolute
+  right 2em
+  top 1em
+  
+.relation-row
+  .card-body
+    padding-bottom 0.75em
+
+  .detail-attr-row
+    padding-bottom 0.5em !important
+
+    > div
+      margin-bottom 0.25em
+      
+  .detail-edit-buttons
+    top 0.75em
+    
+.relation-interstitial
+  position relative
+  margin-top 0.75em
+  padding-top 0.75em
+  border-top 1px solid #ccc
+  
+  .detail-edit-buttons
+    right 1em
+    top 1.75em
+  
+.button-change-relation
+  position absolute
+  left 0
+  top 1.25em
+  width 100%
+  height 2.75em
+  opacity 0
+  z-index 5
+
+.detail-image-view
+  img
+    max-width 100%
+    
+.input-spinner
+  position absolute
+  right 2em
+  bottom 0.65em
+  
+.thumbnail-preview
+  max-width 400px
+  max-height 400px
+  
+.detail-upload-thumbnail
+  position relative
+  display inline-block
+  width 250px
+  height 35px
+  
+  > input
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    width 100%
+    opacity 0
+    
+  > button
+    position relative
+    top 0
+    left 0
+    width 100%
+    height 100%
+    
+.summary-image
+  height 250px
+  margin 2em 0 0.5em 0
+  
+.interstitial-dropdown
+  display inline-block
+  
+.detail-media-overlay-view
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  width 100%
+  padding 1em
+  background-color #111
+  z-index 10000
+  
+  .detail-media-header
+    position absolute
+    left 0
+    top 0
+    right 0
+    height 48px
+    padding-left 1em
+    padding-top 1em
+    color #fff
+  
+  .detail-media-content
+    position absolute
+    top 48px
+    left 0
+    right 0
+    bottom 0
+    padding-left calc(1em - 10px)
+    padding-right 15px
+    overflow auto
+    
+  .shot-list-view
+    background-color #212121
+    color #919191
+    
+    tr.shot-list-row.active
+      background-color #414141
+      
+    tr.shot-list-row:not(:last-child) > td
+      border-bottom-color #313131
+      
+  .detail-image-view
+    padding-left calc(1em - 5px)
+    padding-bottom 1em
+
+.button-close-media-overlay
+  position absolute
+  right 12px
+  top 8px
+  display inline-block
+  background transparent
+  border none
+  color #fff
+  transition color 0.25s
+  font-size 2em
+  line-height 1em
+  
+.button-close-media-overlay:hover
+  color #85a7b3
+  
+@media print
+  .details-content
+  .summary-content
+    margin 0 !important
+    padding 0 !important
+    
+  .summary-content
+    .card-header
+      border-top 1px solid #ccc !important
+      border-bototm 1px solid #ccc !important
+
+
+
+
+
+
+

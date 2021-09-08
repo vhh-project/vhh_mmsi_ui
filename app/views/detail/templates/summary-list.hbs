@@ -1,0 +1,23 @@
+{{#if imageUrl}}
+  <div class="row detail-row summary-row">
+  <div class="col-12">
+    <img class="summary-image" src="{{imageUrl}}" /><br />
+    {{#ifEqual mediaType 'image'}}
+      <button type="button" class="btn btn-primary button-open-media"><i class="fa fa-image"></i> <span>{{_ 'button.open_image_viewer'}}</span></button>
+    {{/ifEqual}}
+    {{#ifEqual mediaType 'video'}}
+      <button type="button" class="btn btn-primary button-open-media"><i class="fa fa-video"></i> <span>{{_ 'button.open_video_player'}}</span></button>
+    {{/ifEqual}}
+  </div>
+</div>
+{{/if}}
+<div class="row detail-row summary-row">
+  <div class="col-2"><strong>{{_ 'table.object_type'}}:</strong></div>
+  <div class="col-10">{{_ objectType}}</div>
+</div>
+{{#each summary}}
+  <div class="row detail-row summary-row{{#unless values.length}} text-muted{{/unless}}">
+    <div class="col-2"><strong>{{label}}{{#if description}} {{tooltipIcon description}}{{/if}}</strong></div>
+    <div class="col-10">{{{values}}}</div>
+  </div>
+{{/each}}

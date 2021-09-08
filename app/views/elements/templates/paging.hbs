@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-primary btn-sm button-prev-page" type="button" title="{{_ 'tip.previous_page'}}"{{#ifEqual currentPage 1}} disabled{{/ifEqual}}>
+          <i class="fa fa-chevron-left"></i>
+        </button>
+      </div>
+      <input type="text" class="form-control form-control-sm input-paging-current-page" aria-label="{{_ 'placeholder.paging_input'}}" value="{{currentPage}}">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-sm button-next-page" type="button" title="{{_ 'tip.next_page'}}"{{#ifEqual currentPage pageCount}} disabled{{/ifEqual}}>
+          <i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-9 text-right">
+    {{#each pages}}
+      {{#if separator}}
+        <span>&hellip;</span>
+      {{else}}
+        {{#if active}}
+          <button class="btn btn-primary btn-sm button-paging" disabled>{{index}}</button>
+        {{else}}
+          <button class="btn btn-outline-primary btn-sm button-paging" data-index="{{index}}">{{index}}</button>
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  </div>
+</div>

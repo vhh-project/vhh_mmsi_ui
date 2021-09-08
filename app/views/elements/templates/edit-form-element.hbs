@@ -1,0 +1,43 @@
+<div class="edit-form-col{{#if defItem.offset}} offset-lg-{{defItem.offset}}{{/if}} col-lg{{#if defItem.cols}}-{{defItem.cols}}{{/if}}" data-value-index="{{valueIndex}}"> 
+  <label><small class="text-muted">{{#if defItem.label}}{{defItem.label}}{{else}}{{#if defItem.labelCode}}{{_ defItem.labelCode}}{{/if}}{{/if}}{{#if defItem.required}}*{{/if}}{{#if defItem.description}} {{tooltipIcon defItem.description}}{{/if}}</small></label>
+  {{#ifEqual defItem.type 'vocabulary'}}
+    {{{vocabularySelect defItem value index attrKey}}}
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'relationType'}}
+    <select class="form-control custom-select" data-index="{{index}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}">
+      <option value="">{{_ 'label.select_relationship_type'}}</option>
+      {{#each labelValue}}
+        <option {{#if disabled}}disabled {{/if}}{{#if selected}}selected {{/if}}value="{{id}}{{#if reverse}}.reverse{{/if}}">{{{padding depth '&nbsp;&nbsp;&nbsp;' 1}}}{{label}}{{#if key}} ({{key}}){{/if}}</option>
+      {{/each}}
+    </select>
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'textarea'}}
+    <textarea class="form-control" rows="{{#if defItem.rows}}{{defItem.rows}}{{else}}3{{/if}}" data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}">{{{value}}}</textarea>
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'url'}}
+    <input class="form-control" data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}" type="text" value="{{{value}}}" />
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'urlWithTest'}}
+    <input class="form-control" data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}" type="text" value="{{{value}}}" />
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'relation'}}
+    <div class="change-relation-group">
+      <input class="form-control" data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}" type="hidden" value="{{value}}" />
+      <div class="input-group" role="group">
+        <input class="form-control label-only" disabled type="text" value="{{labelValue}}" />
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary btn-sm" tabindex="-1">{{_ 'button.set_object'}}</button>
+        </div>
+      </div>
+      <button type="button" class="button-change-relation" data-object-type="{{defItem.objectType}}"></button>
+    </div>
+  {{/ifEqual}}
+  {{#ifEqual defItem.type 'geocode'}}
+    <div class="map-geocode map-geocode-edit" data-geocode="{{value}}"></div>
+    <input class="form-control" data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}" type="text" value="{{{value}}}" />
+  {{/ifEqual}}
+  {{#unless defItem.type}}
+    <input class="form-control{{#if defItem.lookup}} input-lookup{{/if}}"{{#if defItem.placeholder}} placeholder="{{defItem.placeholder}}"{{/if}} data-index="{{attrIndex}}" data-attr-key="{{attrKey}}" data-key="{{defItem.key}}" type="text" value="{{{value}}}" {{#if defItem.lookup}} data-lookup="{{defItem.lookup}}" {{#if defItem.lookupMinLength}} data-lookup-min-length="{{defItem.lookupMinLength}}"{{/if}}{{/if}} />
+  {{/unless}}
+</div>
+{{#if defItem.break}}<div class="w-100"></div>{{/if}}

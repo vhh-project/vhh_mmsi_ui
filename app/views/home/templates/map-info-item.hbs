@@ -1,0 +1,13 @@
+<div class="map-info-item" data-id="{{id}}">
+  <div class="map-info-header">
+    <h3>{{label}}</h3>
+    <div>
+      {{#if numObjects}}<span class="badge badge-primary" title="{{numObjects}} {{_ 'label.object' numObjects}}">{{numObjects}} <i class="fa fa-file"></i></span>{{/if}}
+      {{#if numAgents}}<span class="badge badge-primary" title="{{numAgents}} {{_ 'label.agent' numAgents}}">{{numAgents}} <i class="fa fa-user"></i></span>{{/if}}
+      {{#if numEvents}}<span class="badge badge-primary" title="{{numEvents}} {{_ 'label.event' numEvents}}">{{numEvents}} <i class="fa fa-calendar"></i></span>{{/if}}
+      {{#if numPlaces}}<span class="badge badge-primary" title="{{numPlaces}} {{_ 'label.place' numPlaces}}">{{numPlaces}} <i class="fa fa-map-marker-alt"></i></span>{{/if}}
+      {{#if numCollections}}<span class="badge badge-primary" title="{{numCollections}} {{_ 'label.collection' numCollections}}">{{numCollections}} <i class="fa fa-layer-group"></i></span>{{/if}}
+    </div>
+  </div>
+  <div class="collapse"></div>
+</div>

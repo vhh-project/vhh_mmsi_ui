@@ -1,0 +1,24 @@
+<div class="breadcrumbs-container"></div>
+<div class="detail-view-wrapper">
+  <div class="details-navigation">
+    <ul class="nav nav-pills d-print-none flex-column" id="tab-detail" role="tablist">
+      <li class="nav-item"><h3>Edit mode</h3></li>
+      {{#each groups as | group index |}}
+        {{#ifEqual group.type 'summary'}}
+          <li class="nav-item nav-item-summary"><a href="#" class="nav-link" role="tab" data-index="{{index}}">{{_ 'tab.back_to_summary'}}</a></li>
+        {{else}}
+          <li class="nav-item"><a class="nav-link" role="tab" data-index="{{index}}">{{_ group.label}}</a></li>
+        {{/ifEqual}}
+      {{/each}}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="detail-tabs-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{_ 'button.actions'}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="detail-tabs-dropdown">
+          <a class="dropdown-item button-delete-record" href="#"><i class="fa fa-trash"></i> {{_ deleteLabel}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content details-content"></div>
+</div>

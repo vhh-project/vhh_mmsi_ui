@@ -1,0 +1,8 @@
+<div id="shot-inter-thumb" class="shot-inter-thumb active">
+  <div class="shot-image" style="background-image:url({{thumbPath}});"></div>
+  <span>{{frame}}</span>
+  {{#if canEdit}}
+    <button type="button" class="btn btn-primary button-split-shot button-split-shot-before" title="{{_ 'tip.split_shot_before'}}"><i class="fa fa-cut"></i></button>
+    <button type="button" class="btn btn-primary button-split-shot button-split-shot-after" title="{{_ 'tip.split_shot_after'}}"><i class="fa fa-cut"></i></button>
+  {{/if}}
+</div>

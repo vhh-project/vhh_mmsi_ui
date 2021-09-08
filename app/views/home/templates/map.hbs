@@ -1,0 +1,12 @@
+<div class="breadcrumbs-container"></div>
+<div class="map-view-wrapper"></div>
+<div class="map-info-wrapper">
+  <div class="map-info-filters">
+    <select id="map-item-type-select" class="custom-select">
+      <option{{#ifEqual mapFilterKey 'all'}} selected{{/ifEqual}} value="all">{{_ 'label.filter_map_items_all'}}</option>
+      <option{{#ifEqual mapFilterKey 'has_related'}} selected{{/ifEqual}} value="has_related">{{_ 'label.filter_map_items_with_relations'}}</option>
+      <option{{#ifEqual mapFilterKey 'empty'}} selected{{/ifEqual}} value="empty">{{_ 'label.filter_map_items_empty'}}</option>
+    </select>
+  </div>
+  <div class="map-info-items"></div>
+</div>

@@ -1,0 +1,314 @@
+path	key	en	de
+internal	comma	.	,
+internal	separator	,	.
+internal	yes	Yes	Ja
+internal	no	No	Nein
+internal	lang.de	German	Deutsch
+internal	lang.en	English	Englisch
+date	days	Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday	Sonntag|Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag
+date	days_short	Sun|Mon|Tue|Wed|Thu|Fri|Sat	Son|Mon|Die|Mit|Don|Fre|Sam
+date	days_min	Su|Mo|Tu|We|Th|Fr|Sa	So|Mo|Di|Mi|Do|Fr|Sa
+date	months	January|February|March|April|May|June|July|August|September|October|November|December	Jänner|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember
+date	months_short	Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec	Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez
+date	today	Today	Heute
+date	months_title	Months	Monate
+date	clear	Clear	Zurücksetzen
+date	week_start	1	1
+date	format	mm/dd/yyyy	dd.mm.yyyy
+date	format_datetime	mm/dd/yyyy, HH:MM	dd.mm.yyyy, HH:MM
+date	format_yearmonth	mm/yyyy	mm/yyyy
+date	format_time	HH:MM	HH:MM
+date	title_format	MM yyyy	MM yyyy
+strings	title.app_name	VHH MMSI	VHH MMSI
+strings	title.map	Map	Map
+strings	title.objects	Objects	Objekte
+strings	title.agents	Agents	Agente
+strings	title.events	Events	Events
+strings	title.places	Places	Orte
+strings	title.collections	Collections	Sammlungen
+strings	title.create_object	Create Object	Objekt erstellen
+strings	title.create_agent	Create Agent	Agenten erstellen
+strings	title.create_event	Create Event	Event erstellen
+strings	title.create_place	Create Place	Ort erstellen
+strings	title.create_collection	Create Collection	Sammlung erstellen
+strings	header.logout	LOGOUT	LOGOUT
+strings	header.delete	Delete	Löschen von: 
+strings	header.delete_relation	Delete Relation	Relation löschen
+strings	header.delete_interstitial	Delete Interstitial Record	Eintrag löschen
+strings	header.delete_thumbnail	Delete Thumbnail	Thumbnail
+strings	header.additional_information	Additional Information	Zusatzinformation
+strings	header.basic_fields	Basic Fields	Basisfelder
+strings	header.preferred_label	Preferred Label	Bevorzugtes Label
+strings	header.api_errors	Your changes could not be performed due to the following errors:	Ihre Änderungen konnten aufgrund folgender Fehler nicht durchgeführt werden:
+strings	header.related_objects	Related Objects	Verknüpfte Objekte
+strings	header.related_entities	Related Agents	Verknüpfte Agenten
+strings	header.related_events	Related Events	Verknüpfte Events
+strings	header.related_places	Related Places	Verknüpfte Orte
+strings	header.related_collections	Related Collections	Verknüpfte Kollektionen
+strings	header.derivate_status	Derivate Status	Derivate Status
+strings	header.change_object	Change Object	Objekt festlegen
+strings	header.change_agent	Change Agent	Agenten festlegen
+strings	header.change_event	Change Event	Event festlegen
+strings	header.change_place	Change Place	Ort festlegen
+strings	header.change_collection	Change Collection	Kollektion festlegen
+strings	header.discard_edited	Unsaved data	Ungespeichere Daten
+strings	header.edit_relation_type	Edit Relation Type	Typ der Relation ändern
+strings	button.delete	Delete	Löschen
+strings	button.edit	Edit	Bearbeiten
+strings	button.actions	Actions	Aktionen
+strings	button.delete_object	Delete Object	Objekt löschen
+strings	button.delete_agent	Delete Agent	Agenten löschen
+strings	button.delete_event	Delete Event	Event löschen
+strings	button.delete_place	Delete Place	Ort löschen
+strings	button.delete_collection	Delete Collection	Kollektion löschen
+strings	button.cancel	Cancel	Abbrechen
+strings	button.add	Add	Neu:
+strings	button.set_object	Set Object	Objekt setzen
+strings	button.set_agent	Set Agent	Agent setzen
+strings	button.set_place	Set Place	Ort setzen
+strings	button.select	Select	Auswählen
+strings	button.open_image_viewer	Open Image Viewer	Bild ansehen
+strings	button.open_video_player	Open Video Player	Video-Player ansehen
+strings	message.confirm_delete	Please confirm that your want to delete this attribute.	Bitte bestätigen Sie das Löschen.
+strings	message.confirm_delete_relation	Please confirm that your want to delete this relation to	Bitte bestätigen Sie das Löschen der Relation zu
+strings	message.confirm_delete_thumbnail	Please confirm that your want to delete this thumbnail	Bitte bestätigen Sie das Löschen dieses Thumbnails
+strings	message.no_video_found	No video found	Kein Video gefunden
+strings	message.no_image_found	No image found	Kein Bild gefunden
+strings	message.no_media_found	No media found	Keine Medien gefunden
+strings	message.no_thumbnail_found	No Thumbnail found	Kein Thumbnail gefunden
+strings	message.attribute_updated	Data has been saved	Die Daten wurden gespeichert
+strings	message.relation_type_updated	The relation type has been updated	Der Typ der Relation wurde geändert
+strings	message.attribute_deleted	Deleted successfully	Erfolgreich gelöscht
+strings	message.preferred_label_deleted	Preferred label deleted	Bevorzugtes Label wurde gelöscht
+strings	message.api_fetch_error	Error while fetching data	Beim Laden der Daten ist ein Fehler aufgetreten
+strings	message.single_with_multiple_entries	By definition, only one instance of this attribute is allowed	Per Definition ist nur eine Instanz dieses Attributes erlaubt
+strings	message.no_relations	No relations	Keine Relations
+strings	message.discard_edited	Please confirm that you want to discard unsaved data.	Bitte bestätigen Sie, dass Sie die nicht gespeicherten Eingaben verwerfen möchten.
+strings	message.discard_before_unload	You are about to navigate away from the MMSI application. Do you want to discard unsaved data.	Sie sind dabei, die MMSI Applikation zu verlassen. Wollen Sie die ungespeicherten Daten verwerfen.
+strings	message.delete_record	Please confirm that you want to delete this record and all its attributes and relations. Related records will not be affected.	Bitte bestätigen Sie, dass Sie diesen Datensatz mit seinen Attributen und Relationen löschen wollen. Verknüpfte Datensätze sind nicht betroffen.
+strings	message.delete_interstitial	Please confirm that you want to delete this interstitial record	Bitte bestätigen Sie, dass Sie diesen Eintrag löschen wollen.
+strings	message.interstitial_deleted	Interstital record deleted	Eintrag gelöscht
+strings	message.change_relation	Please select a relation type for	Bitte wählen Sie einen Typ für die Relation
+strings	message.confirm_clear_shots	Are you sure you want to clear the list of shots? The undo history will be deleted.	Sind Sie sicher, dass Sie die Liste der Shots leeren wollen? Die Undo-Historie wird dabei geleert.
+strings	message.revert_shots_to_auto	Are you sure you want to revert to automatically generated shots? The undo history will be deleted.	Sind sie sicher, dass Sie auf die automatisch generierten Shots zurücksetzen wollen? Die Undo-Historie wird dabei geleert.
+strings	message.revert_shots_to_manual	Are you sure you want to revert to manually generated shots? The undo history will be deleted.	Sind sie sicher, dass Sie auf die zuletzt gespeicherten manuell bearbeiteten Shots zurücksetzen wollen? Die Undo-Historie wird dabei geleert.
+strings	message.shots_created_from_auto	The shots have just been created from automatically generated shots.	Die Shotliste wurde neu anhand der automatischen Shots generiert.
+strings	message.shots_loaded	Last saved manual shots loaded.	Die letzten gespeicherten manuellen Shots wurden geladen.
+strings	message.shot_created_from_gap	Created shot from gap. In: $1, Out: $2	Shot von Lücke erstellt: In: $1, Out: $2
+strings	message.shot_splitted	Splitted shot between frames $1 and $2	Der Shot wurde zwischen Frame $1 und $2 geteilt
+strings	message.shots_merged	Merged shots from frame $1 to $2	Shots zusammengeführt von Frame $1 bis $2
+strings	message.shots_moved_up	Shot boundary moved up by one frame and is now between frames $1 and $2	Die Shotgrenze wurde nach oben bewegt und ist nun zwischen den Frames $1 und $2
+strings	message.shots_moved_down	Shot boundary moved down by one frame and is now between frames $1 and $2	Die Shotgrenze wurde nach unten bewegt und ist nun zwischen den Frames $1 und $2
+strings	message.shots_changed_type	Changed shot type from $1 to $2. In: $3, Out: $4	Shot type geändert von $1 auf $2. In: $3, Out: $4
+strings	message.shots_deleted_shot	Deleted shot. In: $1, Out: $2	Shot gelöscht. In: $1, Out: $2
+strings	message.shots_saved	Shots saved successfully	Die shots wurden gespeichert
+strings	message.shots_save_error	An error occurred while saving the shots	Ein Fehler ist beim Löschen der Shots aufgetreten
+strings	message.shots_cleared	The shot list has been cleared.	Die Shotliste wurde geleert.
+strings	message.shots_reverted_to_auto	The shots have been reverted to the automatically generated shots	Die Shots wurden auf die automatisch generierten zurückgesetzt
+strings	message.shots_reverted_to_manual	The shots have been reverted to the last saved manual shots	Die Shots wurden auf die zuletzt gespeicherten Shots zurückgesetzt
+strings	message.shot_confirmed	Shot confirmed. In: $1, Out: $2	Shot bestätigt.  In: $1, Out: $2
+strings	message.shot_unconfirmed	Shot unconfirmed. In: $1, Out: $2	Shot nicht bestätigt.  In: $1, Out: $2
+strings	message.shots_confirmed_info	$1 / $2 confirmed	$1 / $2 bestätigt
+strings	message.confirm_all_shots	All shots confirmed	Alle Shots bestätigt
+strings	message.unconfirm_all_shots	All shots unconfirmed	Alle Shots nicht bestätigt
+strings	tip.camera_movement	Camera movement	Kamerabewegung
+strings	tip.in_point	In-point	In-Point
+strings	tip.out_point	Out-point	Out-Point
+strings	tip.shot_type	Shot type	Shot Typ
+strings	tip.edit	Edit	Bearbeiten
+strings	tip.edit_relation_type	Edit relation type	Typ der Relation editieren
+strings	tip.delete	Delete	Löschen
+strings	tip.delete_thumbnail	Delete Thumbnail	Thumbnail löschen
+strings	tip.delete_relation	Delete Relation	Relation löschen
+strings	tip.delete_interstitial	Delete Interstitial Record	Eintrag löschen
+strings	tip.delete_shot	Delete shot	Shot löschen
+strings	tip.edit_interstitial	Edit Interstitial Record	Eintrag ändern
+strings	tip.previous_page	Go to previous page	Zur vorherigen Seite springen
+strings	tip.next_page	Go to next page	Zur nächten Seite springen
+strings	tip.open_in_child_window	Open in second window	In zweitem Fenster öffnen
+strings	tip.opened_in_child_window	Shown in second window	In zweitem Fenster geöffnet
+strings	tip.map_goto_device_location	Show your location	Gerätestandort anzeigen
+strings	tip.map_roadmap_view	Default view	Standardansicht
+strings	tip.map_satellite_view	Satellite view	Satellitenansicht
+strings	tip.map_terrain_view	Terrain view	Terrainansicht
+strings	tip.map_add_image_overlay	Add temporary image overlay	Temporäres Overlay hinzufügen
+strings	tip.map_toggle_overlay_opacity	Change overlay opactiy to	Durchlässigkeit von overlays ändern auf
+strings	tip.show_details	Show details	Details ansehen
+strings	tip.shot_move_up	Move shot boundaries up	Shotgrenzen nach oben verschieben
+strings	tip.shot_move_down	Move shot boundaries down	Shotgrenzen nach unten verschieben
+strings	tip.split_shot_before	Split shot before current frame	Shot aufteilen vor dem Frame
+strings	tip.split_shot_after	Split shot after current frame	Shot aufteilen vor dem Frame
+strings	tip.confirm_shot	Confirm shot	Shot bestätigen
+strings	tip.unconfirm_shot	Unconfirm shot	Shot nicht bestätigen
+strings	camera_movement.PAN	Pan	Pan
+strings	camera_movement.NA	N/A	N/A
+strings	camera_movement.TILT	Tilt	Tilt
+strings	camera_movement.TRACK	Track	Track
+strings	shot.CU	Closeup	Closeup
+strings	shot.ELS	Extreme Long Shot	Extreme Long Shot
+strings	shot.LS	Long Shot	Long Shot
+strings	shot.MS	Medium Shot	Medium Shot
+strings	shot.I	Intertitle	Intertitle
+strings	shot.NA	N/A	N/A
+strings	tab.media	Media	Medien
+strings	tab.basic	Basic Data	Basic Data
+strings	tab.additional	Additional Data	Additional Data
+strings	tab.format	Format	Format
+strings	tab.rights	Rights	Rechte
+strings	tab.relations	Relations	Verknüpfungen
+strings	tab.groups	Groups	Gruppen
+strings	tab.thumbnail	Thumbnail	Thumbnail
+strings	tab.summary	Summary	Zusammenfassung
+strings	tab.workflow	Workflow	Workflow
+strings	tab.back_to_summary	Back to summary	Zurück zur Zusammenfassung
+strings	tab.shots	Edit Shots	Shots bearbeiten
+strings	attr.idno	IDNO	IDNO
+strings	attr.preferred_label	Preferred label	Preferred label
+strings	attr.prefix	Prefix	Prefix
+strings	attr.suffix	Suffix	Suffix
+strings	attr.forename	Forename	Vorname
+strings	attr.middlename	Middle name	Mittlerer Name
+strings	attr.surname	Surname	Nachname
+strings	attr.name	Name	Name
+strings	attr.other_forenames	Other forenames	Andere Vornamen
+strings	attr.displayname	Displayname	Anzeigename
+strings	attr.date	Date	Datum
+strings	attr.vhh_NoteText	Text	Text
+strings	attr.vhh_NoteReference	Reference	Referenz
+strings	attr.vhh_TemporalScope	Temporal Scope	Temporal Scope
+strings	attr.HA_CreditText	Agent Credit (Source)	Agent Credit (Source)
+strings	attr.HA_ActivityDetail	Agent Credit Detail	Agent Credit Detail
+strings	attr.HA_Character	Agent Character	Agent Charakter
+strings	attr.HA_NameUsed	Name Used	Name Used
+strings	attr.HA_CreditRank	Credit Rank	Credit Rank
+strings	title.search_results	Search Results	Suchergebnis
+strings	title.objects_found	object found|objects found	Objekt gefunden|Objekte gefunden
+strings	title.agents_found	agent found|agents found	Agent gefunden|Agenten gefunden
+strings	title.events_found	event found|events found	Event gefunden|Events gefunden
+strings	title.places_found	place found|places found	Ort gefunden|Orte gefunden
+strings	title.collections_found	collection found|collections found	Sammlung gefunden|Sammlungen gefunden
+strings	breadcrumbs.home	Home	Home
+strings	breadcrumbs.objects	Objects	Objects
+strings	breadcrumbs.agents	Agents	Agenten
+strings	breadcrumbs.events	Events	Events
+strings	breadcrumbs.places	Places	Places
+strings	breadcrumbs.collections	Collections	Collections
+strings	button.search	Search	Suche
+strings	button.clear_search	Clear search field	Suchfeld leeren
+strings	button.create	Create	Erstellen
+strings	button.save	Save	Speichern
+strings	button.cancel	Cancel	Abbrechen
+strings	button.upload_thumbnail	Upload Thumbnail	Thumbnail hochladen
+strings	button.discard	Discard	Verwerfen
+strings	button.close	Close	Schließen
+strings	button.merge_shots	Merge Shots	Shots zusammenführen
+strings	button.undo	Undo	Undo
+strings	button.redo	Redo	Redo
+strings	button.change_shot_type	Change Shot Type	Shottyp ändern
+strings	button.revert_shots_to_manual	Revert to last saved manual Shots	Zurücksetzen
+strings	button.revert_shots_to_auto	Revert to Auto	Zurücksetzen (Auto)
+strings	button.clear_shots	Clear List	Liste leeren
+strings	button.create_shot_from_gap	Create Shot from Gap	Shot aus Lücke erstellen
+strings	button.goto_first_unconfirmed_shot	Jump to first unconfirmed shot	Zu letztem unbestätigten Shot springen
+strings	button.goto_first_gap	Jump to first gap	Zur ersten Lücke springen
+strings	button.confirm_all_shots	Confirm all shots	Alle Shots bestätigen
+strings	button.unconfirm_all_shots	Unconfirm all shots	Alle Shots nicht bestätigen
+strings	placeholder.search	Search in all text fields	Suche in allen Textfeldern
+strings	placeholder.search_objects	Search in all object text fields	Suche in allen Objekt Textfeldern
+strings	placeholder.search_agents	Search in all agent text fields	Suche in allen Agenten Textfeldern
+strings	placeholder.search_events	Search in all event text fields	Suche in allen Event Textfeldern
+strings	placeholder.search_places	Search in all place text fields	Suche in allen Ort Textfeldern
+strings	placeholder.search_collections	Search in all collection text fields	Suche in allen Sammlungs Textfeldern
+strings	placeholder.paging_input	Current page number	Aktuelle Seite
+strings	label.researchers_display	Researchers Display	Forscheransicht
+strings	label.object	Object|Objects	Objekt|Objekte
+strings	label.agent	Agent|Agents	Agent|Agenten
+strings	label.event	Event|Events	Event|Events
+strings	label.place	Place|Places	Ort|Orte
+strings	label.collection	Collection|Collections	Sammlung|Sammlungen
+strings	label.map	Map	Karte
+strings	label.search	Search	Suche
+strings	label.spinner_loading	Loading ...	Daten werden geladen ...
+strings	label.advanced_search	Filters	Filter
+strings	label.unknown	unknown	unbekannt
+strings	label.derivative	Derivative	Derivativ
+strings	label.select_value	-- select value --	-- auswählen --
+strings	label.select_relationship_type	-- select relationship type --	-- auswählen --
+strings	label.all_types	-- all types --	-- alle Typen --
+strings	label.all_items	-- all datasets --	-- alle Datensätze --
+strings	label.created_by_me	created by me	von mir erstellte Datensätze
+strings	label.modified_by_me	modified by me	von mir geänderte Datensätze
+strings	label.no_time_restriction	no time restriction	keine Zeitbeschränkung
+strings	label.today	today	heute
+strings	label.to	to	bis
+strings	label.yesterday	yesterday	gestern
+strings	label.this_month	this month	dieses Monat
+strings	label.last_month	last month	letztes Monat
+strings	label.av_creation	AV Creation	AV Creation
+strings	label.av_manifestation	AV Manifestation	AV Manifestation
+strings	label.nonav_creation	Non-AV Creation	Non-AV Creation
+strings	label.nonav_manifestation	Non-AV Manifestation	Non-AV Manifestation
+strings	label.no_idno	no IDNO defined	keine IDNO definiert
+strings	label.create	Create	Erstelle
+strings	label.create_interstitial	Interstitial	Eintrag hinzufügen
+strings	label.item	Item	Item
+strings	label.person	Person	Person
+strings	label.gap	gap|gaps	Lücke|Lücken
+strings	label.group	Group	Group
+strings	label.event_decision	Decision Event	Decision Event
+strings	label.event_event	Event	Event
+strings	label.event_historic	Historic Event	Historischer Event
+strings	label.event_award	Award	Award
+strings	label.event_production	Production	Produktion
+strings	label.event_preservation	Preservation	Preservation
+strings	label.event_publication	Publication	Publikation
+strings	label.place_other	Other	Other
+strings	label.place_city	City	Stadt
+strings	label.place_continent	Continent	Kontinent
+strings	label.place_county	County	County
+strings	label.place_country	Country	Land
+strings	label.place_location	Location	Location
+strings	label.place_state	State	Staat
+strings	label.place_river	River	Fluss
+strings	label.place_neighborhood	Neiborhood	Nachbarschaft
+strings	label.place_parish	Parish	Parish
+strings	label.place_petoria	Petoria	Petoria
+strings	label.place_unspecified	Unspecified	Unspezifiziert
+strings	label.collection_generic	Generic	Allgemein
+strings	label.corporate_body	Organization	Organisation
+strings	label.value_source	Value Source	Value Source
+strings	label.video	Video	Video
+strings	label.vhh_Note	Note	Notiz
+strings	label.related_item	Related Item	Related Item
+strings	label.vhh_HasAgent	Has Agent	Has Agent
+strings	label.summary_all	All attributes	Alle Attribute
+strings	label.show_all_attributes	All fields	Alle Felder
+strings	label.show_set_attributes	Filled out fields	Ausgefüllte Felder
+strings	label.media_types.with_or_without	-- show all objects --	-- alle Objekte anzeigen --
+strings	label.media_types.any	Objects with any media	Objekte mit Medien
+strings	label.media_types.moving_image	Moving image	Bewegtbilder
+strings	label.media_types.image	Image	Bild
+strings	label.no_relations_found	No relations found	Keine Verknüpfungen gefunden
+strings	label.open_place_details	Open place details	Details zum Ort anzeigen
+strings	label.filter_map_items_all	Show all locations	Alle Orte anzeigen
+strings	label.filter_map_items_with_relations	Show locations with relations	Orte mit Relationen anzeigen
+strings	label.filter_map_items_empty	Show locations without relations	Orte ohne Relationen anzeigen
+strings	label.no_item_found	No locations found	Keine Orte gefunden
+strings	table.idno	IDNO	IDNO
+strings	table.object_type	Type	Type
+strings	table.display_label	Display Label	Anzeigename
+strings	table.preferred_label	Preferred Label	Preferred Label
+strings	table.thumbnail	Thumb	Thumb
+strings	table.date_of_production	Production Date	Produktionsdatum
+strings	table.date_of_birth_or_foundation	Birth / Foundation	Geburts- / Gründungsdatum
+strings	table.date_of_death_or_dissolution	Death / Dissolution	Todes- / Auflösungsdatum
+strings	table.date	Date	Datum
+strings	filters.header.main	Refine your Search	Suche verfeinern
+strings	filters.header.content_type	Content Type	Content Typ
+strings	filters.header.labels	Labels from Vocabulary	Labels vom Vokabular
+strings	filters.header.object_type	Object Type	Objekttyp
+strings	filters.header.created_or_modified_by_me	Created or modified by me	Von mir erstellt oder geändert
+strings	filters.header.media_type	Media Type	Medientyp
+strings	form.required	This field is required	Dieses Feld darf nicht leer sein
+strings	error.unkown_api_error	An unknown error occurred	Ein unbekannter Fehler ist aufgetreten
+strings	error.thumbnail_mime_type	Only JPG and PNG files are allowed for thumbnails	Nur JPG und PNG Dateien sind für Thumbnails erlaubt

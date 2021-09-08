@@ -1,0 +1,8 @@
+<p>{{_ 'message.change_relation'}} <strong>{{attr.label}}</strong></p>
+<p>
+  <select class="form-control custom-select">
+    {{#each relationshipTypes}}
+      <option {{#if disabled}}disabled {{/if}}{{#if selected}}selected {{/if}}value="{{id}}{{#if reverse}}.reverse{{/if}}">{{{padding depth '&nbsp;&nbsp;&nbsp;' 1}}}{{label}}{{#if key}} ({{key}}){{/if}}</option>
+    {{/each}}
+  </select>
+</p>

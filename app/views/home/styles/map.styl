@@ -1,0 +1,82 @@
+.map-view
+  position relative
+  height 100%
+  
+.map-view-wrapper
+  position absolute
+  top -3px
+  left -15px
+  right 400px
+  bottom 0
+  
+.map-info-wrapper
+  position absolute
+  top -3px
+  width 415px
+  right -15px
+  bottom 0
+  
+  > .map-info-filters
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 63px
+    padding 15px
+    background-color #fff
+    
+  > .map-info-items
+    position absolute
+    left 0
+    top 63px
+    bottom 0
+    width 100%
+    padding 15px
+    overflow auto
+  
+.map-info-item
+  background-color #fff
+  border-radius 4px
+  
+  > div:first-child
+    padding 0.5rem
+  
+  h3
+    font-size 1em
+    margin-bottom 0
+    
+  &:hover > div:first-child
+  &.hover > div:first-child
+    background-color #f7a525
+    
+  .map-info-details
+    padding 0.5rem
+    border-top 1px solid #ddd
+  
+.map-info-item:not(:last-child)
+  margin-bottom 4px
+  
+.map-info-related
+  position relative
+  
+  > a
+    display block
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+    padding-right 2.5em
+  
+  > button
+    position absolute
+    right 1em
+    top 0
+    
+  &:not(:last-child)
+    margin-bottom 0.6em
+    
+.easy-button-button
+  font-size 18px
+  line-height 27px !important
+  
+.state-map-state-button-active
+  color #6287A6

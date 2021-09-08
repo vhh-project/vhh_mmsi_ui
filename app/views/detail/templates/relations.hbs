@@ -1,0 +1,88 @@
+<div class="row detail-row relation-row" data-index="{{index}}">
+  <div class="col">
+    <div class="card">
+      {{#unlessEqual label false}}
+        <div class="card-header" id="detail-card-{{index}}">
+          <h2 class="mb-0">{{label}}{{#if showCounterBadge}} <span class="badge badge-secondary">{{definition.attrs.length}}</span>{{/if}}</h2>
+          {{#if canAdd}}<button class="btn btn-sm btn-primary button-new-relation float-right d-print-none" data-index="{{index}}"><i class="fa fa-plus"></i> <span>{{_ 'button.add'}} {{#if label}}{{label}}{{/if}}</span></button>{{/if}}
+        </div>
+      {{/unlessEqual}}
+      <div class="card-body">
+        {{#if feedback}}
+          <div class="row pb-0">
+            <div class="col-12">{{{feedback}}}</div>
+          </div>
+        {{/if}}
+        {{#ifEqual definition.attrs.length 0}}
+          <div class="row detail-attr-row">
+            <div class="col-lg-12 text-center"><em>{{_ 'message.no_relations'}}</em></div>
+          </div>
+        {{else}}
+          {{#each definition.attrs as | attr attrIndex |}}
+            <div class="bg-light m-3">
+              <div class="row detail-attr-row">
+                <div class="col-lg-6">
+                  <a href="{{url @root.definition.controllerPath attr._relationId}}">{{#each @root.definition.attrKeys}}{{byKey attr this}} {{/each}}</a>
+                  {{#if attr.relatedAttrs.length}}
+                    {{#each attr.relatedAttrs as | relatedAttr relatedAttrIndex |}}
+                      <span class="related-attr ml-1 text-muted" title="{{relatedAttr.label}}">{{relatedAttr.value}}</span>
+                    {{/each}}
+                  {{/if}}
+                </div>
+                <div class="col-lg-3">{{attr.objectTypeName}}</div>
+                <div class="col-lg-3">{{attr.relationship_typename}}</div>
+                <div class="detail-edit-buttons">
+                  {{#if @root.hasInterstitalDefinitions}}
+                    <div class="dropdown interstitial-dropdown" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}">
+                      <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="create-interstitial-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus"></i> {{_ 'label.create_interstitial'}}
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="create-dropdown-button">
+                        {{#each @root.definition.definitions as | interstitial interstitialIndex |}}
+                          <button type="button" class="dropdown-item" data-key="{{interstitial.key}}">{{_ interstitial.labelKey}}</button>
+                        {{/each}}
+                      </div>
+                    </div>
+                  {{/if}}
+                  {{#if @root.canEdit}}<button class="btn btn-primary btn-sm button-relations-edit" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" title="{{_ 'tip.edit_relation_type'}}"><i class="fa fa-edit"></i></button>{{/if}}
+                  {{#if @root.canDelete}}<button class="btn btn-danger btn-sm button-relations-delete" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" title="{{_ 'tip.delete_relation'}}"><i class="fa fa-trash"></i></button>{{/if}}
+                </div>
+                <div class="col-lg-12 relation-interstitial-wrapper">                    
+                  {{#if attr.definitions}}
+                    {{#each attr.definitions as | relationDefinition relationIndex |}}
+                      {{#each relationDefinition.attrs as | relationAttr relationAttrIndex |}}
+                        <div class="row relation-interstitial">
+                          <div class="col-lg-12"><strong>{{_ relationDefinition.labelKey}}</strong></div>
+                          {{#each relationAttr.attr as | relationAttrValue relationValueIndex |}}
+                            <div class="col-lg{{#if relationAttrValue.defItem.cols}}-{{relationAttrValue.defItem.cols}}{{/if}}">
+                              <label><small class="text-muted">{{relationAttrValue.defItem.label}}</small></label>
+                              {{#if relationAttrValue.defItem.strong}}
+                                <strong>{{{relationAttrValue.value}}}</strong>
+                              {{else}}
+                                {{{relationAttrValue.value}}}
+                              {{/if}}
+                            </div>
+                          {{/each}}
+                          {{#if relationAttr.valueSource}}
+                            <div class="detail-value-source col-lg-12">
+                              <label><em><small class="text-muted">{{_ 'label.value_source'}}</small></em></label>
+                              <div><em>{{{createLinksFromUrls relationAttr.valueSource}}}</em></div>
+                            </div>
+                          {{/if}}
+                          <div class="detail-edit-buttons">
+                            {{#if @root.canEdit}}<button class="btn btn-primary btn-sm button-interstital-edit" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" data-interstitial-key="{{relationDefinition.key}}" data-value-index="{{relationAttrIndex}}" title="{{_ 'tip.edit_interstitial'}}"><i class="fa fa-edit"></i></button>{{/if}}
+                            {{#if @root.canDelete}}<button class="btn btn-danger btn-sm button-interstital-delete" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" data-interstitial-key="{{relationDefinition.key}}" data-value-index="{{relationAttrIndex}}" title="{{_ 'tip.delete_interstitial'}}"><i class="fa fa-trash"></i></button>{{/if}}
+                          </div>
+                        </div>
+                      {{/each}}
+                    {{/each}}
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{/ifEqual}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.search-input-view  
+  .custom-switch
+    margin-top 3px
+  
+    > .custom-control-label
+      color #fff
+      
+      &::before
+        border none
+    
+  .search-input-input
+    border-top-left-radius 4px !important
+    border-bottom-left-radius 4px !important
+    
+    &:focus
+      box-shadow none
+      border-right none
+    
+    &:placeholder-shown + .input-group-append > .button-clear-search
+      display none
+    
+  .button-clear-search
+    border-top 1px solid #ced4da
+    border-bottom 1px solid #ced4da

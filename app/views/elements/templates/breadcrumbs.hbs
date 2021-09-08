@@ -1,0 +1,19 @@
+{{#if iconCode}}
+  <div class="breadcrumbs-icon"><i class="fa fa-{{iconCode}}"></i></div>
+{{/if}}
+<div>
+  <div class="breadcrumbs-title">{{title}}</div>
+  <div class="breadcrumbs-path">
+    {{#if showHome}}
+      <span class="breadcrumbs-item"><a href="/">{{_ 'breadcrumbs.home'}}</a></span>
+      <span class="breadcrumbs-separator">&gt;</span>
+    {{/if}}
+    {{#each path}}
+      <span class="breadcrumbs-item"><a href="{{href}}">{{name}}</a></span>
+      <span class="breadcrumbs-separator">&gt;</span>
+    {{/each}}
+    {{#if lastItem}}
+      <span class="breadcrumbs-item">{{lastItem.name}}</span>
+    {{/if}}
+  </div>
+</div>

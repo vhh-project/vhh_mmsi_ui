@@ -1,0 +1,18 @@
+<div id="modal-main" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+  <div class="modal-dialog{{#if large}} modal-xl{{/if}}" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="modal-label" class="modal-title">{{header}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">{{content}}</div>
+      {{#unless noButtons}}
+        <div class="modal-footer">
+          {{#unless noCancel}}<button id="modal-button-cancel" type="button" class="btn btn-default">{{cancel}}</button>{{/unless}}
+          {{#if confirm2}}<button id="modal-button-confirm-2" type="button" class="btn btn-primary">{{confirm2}}</button>{{/if}}
+          <button id="modal-button-confirm" type="button" class="btn btn-primary">{{confirm}}</button>
+        </div>
+      {{/unless}}
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

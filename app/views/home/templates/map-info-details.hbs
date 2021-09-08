@@ -1,0 +1,22 @@
+<div class="map-info-details">
+   <div class="map-info-related mb-3"><a href="{{url 'details#place' placeId}}">{{_ 'label.open_place_details'}}</a>{{childLink 'details#place' placeId}}</div>
+  {{#if empty}}
+    <em>{{_ 'label.no_relations_found'}}</em>
+  {{else}}
+    {{#each related.ca_objects as | item index | }}
+      <div class="map-info-related"><a href="{{url 'details#object' item.object_id}}" title="{{item.label}}"><i class="fa fa-file mr-1"></i><span>{{item.label}}</span></a>{{childLink 'details#object' item.object_id}}</div>
+    {{/each}}
+    {{#each related.ca_entities as | item index | }}
+      <div class="map-info-related"><a href="{{url 'details#agent' item.entity_id}}" title="{{item.label}}"><i class="fa fa-user mr-1"></i><span>{{item.label}}</span></a>{{childLink 'details#agent' item.entity_id}}</div>
+    {{/each}}
+    {{#each related.ca_occurrences as | item index | }}
+      <div class="map-info-related"><a href="{{url 'details#event' item.occurrence_id}}" title="{{item.label}}"><i class="fa fa-calendar mr-1"></i><span>{{item.label}}</span></a>{{childLink 'details#event' item.occurrence_id}}</div>
+    {{/each}}
+    {{#each related.ca_places as | item index | }}
+      <div class="map-info-related"><a href="{{url 'details#place' item.place_id}}" title="{{item.label}}"><i class="fa fa-map-marker-alt mr-1"></i><span>{{item.label}}</span></a>{{childLink 'details#place' item.place_id}}</div>
+    {{/each}}
+    {{#each related.ca_collections as | item index | }}
+      <div class="map-info-related"><a href="{{url 'details#collection' item.collection_id}}" title="{{item.label}}"><i class="fa fa-layer-group mr-1"></i><span>{{item.label}}</span></a>{{childLink 'details#collection' item.collection_id}}</div>
+    {{/each}}
+  {{/if}}
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6 thumbnail-container">
+            {{#if imageUrl}}
+              <a href="{{imageUrl}}" target="_blank"><img class="thumbnail-preview" src="{{thumbUrl}}" /></a>
+            {{else}}
+              <div class="alert alert-secondary">{{_ 'message.no_thumbnail_found'}}</div>
+            {{/if}}
+            {{#if canEdit}}
+              <form class="detail-form-upload-thumbnail mt-2">
+                <div class="detail-upload-thumbnail">
+                  <button type="button" class="btn btn-primary">{{_ 'button.upload_thumbnail'}}</button>
+                  <input class="input-upload-thumbnail form-control" type="file" name="thumbnail" />
+                </div>
+                {{#if imageUrl}}<button type="button" class="btn btn-danger button-thumbnail-delete" data-index="{{@root.index}}" data-attr-index="{{attrIndex}}" title="{{_ 'tip.delete_thumbnail'}}"><i class="fa fa-trash"></i></button>{{/if}}
+              </form>
+            {{/if}}
+          </div>
+        </div> 
+      </div> 
+    </div> 
+  </div>
+</div>

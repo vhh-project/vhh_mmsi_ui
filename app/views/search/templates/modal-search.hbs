@@ -1,0 +1,26 @@
+<div class="row">
+  {{#if objectGroup}}
+    <div class="col-lg-4">
+      <select id="modal-filter-select-object-type" class="custom-select">
+        <option value="">{{_ 'label.all_types'}}</option>
+        {{#each objectGroup as | objectType | }}
+          <option value="{{objectType.typeId}}">{{objectType.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  {{/if}}
+  <div class="col-lg-{{#if objectGroup}}8{{else}}12{{/if}}">
+    <form class="modal-search-bar-wrapper mb-1">
+      <div class="input-group" role="group" aria-label="{{_ 'label.search'}}">
+        <input class="search-input-input form-control" type="text" class="form-control" placeholder="{{_ placeholder}}" value="" />
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary"><i class="fa fa-search pr-1"></i> <span>{{_ 'button.search'}}</span></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="table-wrapper mt-3">
+  <div class="table-container"></div>
+  <div class="paging-container"></div>
+</div>

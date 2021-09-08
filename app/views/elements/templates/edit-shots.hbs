@@ -1,0 +1,37 @@
+<div class="bg-white p-1 mb-2">
+  <button id="edit-shots-button-save" type="button" class="btn btn-primary">{{_ 'button.save'}}</button>
+  <div class="btn-group" role="group">
+    <button id="edit-shots-button-undo" type="button" class="btn btn-primary">{{_ 'button.undo'}}</button>
+    <div class="btn-group" role="group">
+      <button id="edit-shots-button-undo-history" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled></button>
+      <div class="dropdown-menu history-dropdown" aria-labelledby="edit-shots-button-undo-history"></div>
+    </div>
+  </div>
+  <button id="edit-shots-button-redo" type="button" class="btn btn-primary">{{_ 'button.redo'}}</button>
+  <div class="btn-group float-right">
+    <div class="input-group mr-1">
+      <div class="input-group-prepend">
+        <div class="input-group-text" id="shot-edit-count-info"></div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="edit-shots-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="edit-shots-dropdown">
+        <button id="edit-shots-button-goto-first-unconfirmed" type="button" class="dropdown-item">{{_ 'button.goto_first_unconfirmed_shot'}}</button>
+        <button id="edit-shots-button-goto-first-gap" type="button" class="dropdown-item">{{_ 'button.goto_first_gap'}}</button>
+        <button id="edit-shots-button-confirm-all" type="button" class="dropdown-item">{{_ 'button.confirm_all_shots'}}</button>
+        <button id="edit-shots-button-unconfirm-all" type="button" class="dropdown-item">{{_ 'button.unconfirm_all_shots'}}</button>
+        <div class="dropdown-divider"></div>
+        {{#if hasAutoShots}}
+          <button id="edit-shots-button-revert-auto" type="button" class="dropdown-item">{{_ 'button.revert_shots_to_auto'}}</button>
+        {{/if}}
+        <button id="edit-shots-button-revert-manual" type="button" class="dropdown-item">{{_ 'button.revert_shots_to_manual'}}</button>
+        <button id="edit-shots-button-clear" type="button" class="dropdown-item">{{_ 'button.clear_shots'}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="shot-editor-info-box" class="bg-white mb-1 p-1">&nbsp;</div>
+<div class="edit-shots-container"></div>

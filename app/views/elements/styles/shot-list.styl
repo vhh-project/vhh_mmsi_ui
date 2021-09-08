@@ -1,0 +1,159 @@
+.shot-list-view
+  background-color #fff
+  overflow auto
+  
+  > table
+    width 100%
+
+tr.shot-list-row
+  cursor default
+  
+  .btn-in-out
+    padding 0.25em 0.5em
+    font-size 0.75em
+    
+    > span
+      display inline-block
+    
+    > span:first-child
+      padding-right 0.5em
+      
+    > span:last-child
+      width 4em
+      text-align right
+  
+  > td
+    padding 8px
+    vertical-align middle
+    
+  >td:first-child
+    width 60px
+    text-align right
+  
+  > td:nth-child(2)
+    width 80px
+    
+    img
+      height 48px
+      
+  > td:nth-child(3)
+    width 100px
+      
+  &:not(:last-child)
+    > td
+      border-bottom 1px solid #eee
+  
+  &:not(:last-child)
+    margin-bottom 4px
+    
+  &:hover
+    background-color #C1CCDD
+    
+  &.active
+    background-color #C1CCDD
+    
+.badge-shot
+  text-align left
+  padding-top 0.4em !important
+  padding-bottom 0.4em !important
+  
+.badge-before
+  display inline-block
+  width 24px
+  text-align center
+  
+.edit-shots-container
+  overflow auto
+  
+.edit-shots-view
+  table
+    width 100%
+    
+    td:nth-child(2)
+      width 200px
+    
+    td:first-child
+    td:last-child
+      width calc(50% - 200px)
+      
+.edit-shot-item
+  position relative
+  background-color #fff
+  padding 4px
+  
+  &.gap
+    background-color #f33
+    color #fff
+    
+  &.confirmed
+    background-color #dfc
+
+  &:not(first-child)
+    margin-top: 4px
+    
+  > .thumbs
+    position relative
+    max-width 120px
+    
+  .edit-shot-details
+    position absolute
+    left 250px
+    top 0
+    bottom 0
+    right 0
+    padding 2em 1em
+    
+    > .info
+      font-size 0.8em
+      line-height 1.2em
+    
+  .shot-in
+    margin-bottom 1px
+    
+  .shot-inter-thumb
+    position absolute
+    top 64px
+    left 100px
+    width 120px
+    
+    .button-split-shot
+      position absolute
+      right -8px
+    
+    .button-split-shot-before
+      top -8px
+      
+    .button-split-shot-after
+      bottom -8px
+    
+  .shot-in
+  .shot-out
+  .shot-inter-thumb
+    border 2px solid #212121
+    
+    > .shot-image
+      height 80px
+      width 100%
+      background-size cover
+      
+    > span
+      display block
+      background-color #212121
+      color #ccc
+      text-align center
+      
+    &.active
+      border-color #6fa3b4
+      
+      > span
+        background-color #6fa3b4
+        color #000
+      
+.edit-shots-intermediate-buttons
+  position absolute
+  top -17px
+  right 12px
+  
+.history-dropdown
+  max-height 300px
+  overflow auto

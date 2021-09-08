@@ -1,0 +1,70 @@
+@import 'nib'
+
+body.search
+  padding-top 221px
+  background-color #fff
+
+.search-view
+  min-height 100%
+  
+  .create-dropdown-view
+    position absolute
+    top 6px
+    right 15px
+
+.search-bar-wrapper
+  position fixed
+  top 85px
+  left 0
+  width 100%
+  z-index 10
+  background-color #1A1919
+  padding-top 1.25em
+  padding-bottom 1.25em
+  
+  + div
+    z-index 1
+    
+    .breadcrumbs-container
+      top 155px
+  
+.filter-wrapper
+  position fixed
+  top 155px
+  bottom 0
+  left 0
+  background-color #Eaeded
+  width 380px
+  overflow hidden
+  padding-top 0.75rem
+  display none
+  z-index 2
+  
+  > div
+    width 380px
+  
+  h2
+    font-size 1.5em
+    
+  h3
+    font-size 1.25em
+    
+.filter-group-content-type
+  button
+    width 3rem
+  
+    &:not(:last-child)
+      margin-right 0.25rem
+      
+.table-wrapper
+  background-color #fff
+  z-index 1
+  min-height 100%
+  padding-bottom 1em
+  
+.table thead th.column-link
+  width 4rem
+  min-width 4rem
+  
+td.column-link
+  white-space nowrap

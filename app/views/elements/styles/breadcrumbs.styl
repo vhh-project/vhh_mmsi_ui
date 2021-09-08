@@ -1,0 +1,42 @@
+.breadcrumbs-container
+  top 85px
+  position fixed
+  left 0
+  right 0
+  padding 0
+  z-index 10
+  
+  + div
+    z-index 1
+  
+  > .breadcrumbs-view
+    padding-left 15px
+    padding-right 15px
+    
+@media print
+  .breadcrumbs-container
+    display none
+
+.breadcrumbs-view
+  display flex
+  flex-flow row wrap
+  justify-content flex-start
+  align-items stretch
+  box-shadow 0px 2px 2px 2px rgba(0, 0, 0, 0.05)
+  margin-bottom 1rem
+  padding-top 6px
+  padding-bottom 8px
+  background-color #fff
+  
+.breadcrumbs-icon
+  width 1.5rem
+  font-size 1.5rem
+  margin-right 1rem
+  color #A19C9C
+  
+.breadcrumbs-title
+  font-weight 500
+  
+.breadcrumbs-path
+  font-size 0.75rem
+  line-height 0.75rem

@@ -1,0 +1,96 @@
+.summary-object-view
+  position relative
+  height 100%
+
+.summary-navigation
+  position fixed
+  top calc(135px + 1em)
+  bottom 1em
+  left 1em
+  width calc(350px - 1em)
+  padding 1em
+  background-color white
+  overflow auto
+  
+.summary-nav-item
+  position relative
+  padding 0.75rem 4rem 0.75rem 1rem
+  cursor default
+  
+  > .button-open-in-child-window
+    position absolute
+    right 1rem
+    top 50%
+    transform translateY(-50%)
+  
+  > .summary-nav-item-image
+    position absolute
+    width 4em
+    left 0
+    top 0
+    bottom 0
+    text-align right
+    background-size cover
+    z-index 1
+    
+    + div
+      padding-left 3rem
+      
+      + div
+        padding-left 3rem
+  
+  &.object-creation + .summary-manifestations
+    border-left 1rem solid #D4E2ED
+    padding-top 2px
+    padding-left 2px
+    
+    > .object-manifestation:not(:first-child)
+      margin-top 2px
+    
+  &.object-manifestation + .summary-items
+    border-left 1rem solid #D4EDDE
+    padding-top 2px
+    padding-left 2px
+    
+    > .object-item:not(:first-child)
+      margin-top 2px
+      
+  &.active::after
+    content '\f06e'
+    font-family 'Font Awesome 5 Free'
+    font-size 0.75rem
+    line-height 0em
+    position absolute
+    right 2.5rem
+    top 50%
+    transform translateY(-50%)
+    color #302f2f
+    display inline-block
+    width 26px
+    text-align center
+    z-index 4
+    
+  &.selected
+    margin-right -1em
+    
+    &.object-creation
+      border-right 1em solid #D4E2ED
+      
+    &.object-manifestation
+      border-right 1em solid #D4EDDE
+      
+    &.object-item
+      border-right 1em solid #ECEDD4
+      
+.summary-object-type-label
+  font-size 0.75em
+  font-style italic
+  opacity 0.75
+  
+.summary-object-label
+  line-height 1.2em
+  padding-right 2em
+        
+.summary-content
+  margin-left 350px
+  height 100%

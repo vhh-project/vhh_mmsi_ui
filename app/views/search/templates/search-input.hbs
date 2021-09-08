@@ -1,0 +1,15 @@
+<form class="search-form-main">
+  <div class="input-group" role="group" aria-label="{{_ 'label.search'}}">
+    <div class="input-group-prepend">
+      <div class="custom-control custom-switch bigger pr-3">
+        <input type="checkbox" class="custom-control-input" id="switch-advanced-search"{{#ifEqual showFilters 'yes'}} checked{{/ifEqual}}>
+        <label class="custom-control-label" for="switch-advanced-search">{{_ 'label.advanced_search'}}</label>
+      </div>
+    </div>
+    <input class="search-input-input form-control" type="text" class="form-control" placeholder="{{_ placeholder}}" value="{{query}}" />
+    <div class="input-group-append">
+      <button type="button" class="btn bg-white btn-link button-clear-search" title="{{_ 'button.clear_search'}}"><i class="fa fa-times"></i></button>
+      <button type="submit" class="btn btn-primary"><i class="fa fa-search pr-1"></i> <span>{{_ 'button.search'}}</span></button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,1 @@
+Handlebars.registerPartial 'editFormElement', require('./templates/edit-form-element')

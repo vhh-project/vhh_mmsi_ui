@@ -1,0 +1,50 @@
+{
+  "author": "Ronald Genswaider",
+  "name": "vhh",
+  "description": "VHH Workspace",
+  "version": "0.0.1",
+  "homepage": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "exoskeleton": "~0.6.0",
+    "chaplin": "~1.1.0",
+    "console-polyfill": "~0.1.0",
+    "@fortawesome/fontawesome-free": "~5.14.0",
+    "vhh-video-player": "file:local_node_modules/vhh-video-player",
+    "lodash": "~4.17.15",
+    "popper.js": "~1.14.7",
+    "bootstrap": "~4.3.0",
+    "bootstrap-autocomplete": "~2.3.7",
+    "leaflet": "1.7.1",
+    "leaflet-draw": "~1.0.4",
+    "leaflet-google": "1.0.0",
+    "leaflet-control-geocoder": "~2.1.0",
+    "leaflet.fullscreen": "~2.0.0",
+    "leaflet-easybutton": "~2.4.0",
+    "leaflet-distortableimage": "~0.21.7"
+  },
+  "devDependencies": {
+    "javascript-brunch": "~2.0.0",
+    "coffee-script-brunch": "~2.0.0",
+    "css-brunch": "~2.0.0",
+    "sass-brunch": "~2.0.0",
+    "stylus-brunch": "~2.0.0",
+    "handlebars-brunch": "~2.0.0",
+    "uglify-js-brunch": "~2.0.0",
+    "clean-css-brunch": "~2.0.0",
+    "auto-reload-brunch": "~2.0.0",
+    "brunch": "~2.3.0",
+    "copyfilemon-brunch": "~3.3.0",
+    "localization-brunch": "file:local_node_modules/localization-brunch",
+    "replacer-brunch": "file:local_node_modules/replacer-brunch"
+  }
+}

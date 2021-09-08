@@ -1,0 +1,5 @@
+<select class="form-control custom-select">
+    {{#each shotTypes}}
+      <option {{#ifEqual ../value this}}selected {{/ifEqual}}value="{{this}}">{{_s 'shot.' this}} ({{this}})</option>
+    {{/each}}
+  </select>

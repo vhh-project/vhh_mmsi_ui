@@ -1,0 +1,20 @@
+<form class="row detail-attr-row detail-attr-edit" data-index="{{index}}"{{#unless isNew}} data-attr-index="{{attrIndex}}"{{/unless}}>
+  <div class="col-lg-12">{{#if header}}<h2>{{header}}</h2>{{/if}}</div>
+  {{#each attr.attr as | attrValue valueIndex |}}
+    {{> editFormElement value=attrValue.originalValue labelValue=attrValue.labelValue defItem=attrValue.defItem attrIndex=attrValue.index valueIndex=valueIndex attrKey=attrValue.defItem.attrKey}}
+  {{/each}}
+  {{#unlessEqual attr.valueSource false}}
+    <div class="col-lg-12">
+      <label><small class="text-muted"><em>{{_ 'label.value_source'}}</em></small></label>
+      <input class="form-control" data-attr-key="{{definition.key}}" data-index="{{attrIndex}}" data-key="_value_source" type="text" value="{{attr.valueSource}}" />
+    </div>
+  {{/unlessEqual}}
+  <div class="col-12 mt-2">
+    {{#if isNew}}
+      <button type="submit" class="btn btn-primary">{{_ 'button.create'}}</button>
+    {{else}}
+      <button type="submit" class="btn btn-primary">{{_ 'button.save'}}</button>
+    {{/if}}
+    <button type="button" class="btn btn-secondary button-cancel ml-2">{{_ 'button.cancel'}}</button>
+  </div>
+</form>

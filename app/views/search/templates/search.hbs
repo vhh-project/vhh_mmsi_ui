@@ -1,0 +1,44 @@
+<div class="search-bar-wrapper"></div>
+<div>
+  <div class="filter-wrapper"{{#ifEqual showFilters 'yes'}} style="display: block;"{{/ifEqual}}>
+    <div>
+      <div class="col-sm">
+        <h2><i class="fa fa-sliders-h"></i> <span>{{_ 'filters.header.main'}}</span></h2>
+        <hr />
+        <div class="filter-inner-wrapper">
+          {{#if objectGroup}}
+            <h3 class="mb-1"><i class="fa fa-filter"></i> <span>{{_ 'filters.header.object_type'}}</span></h3>
+            <div>
+              <select id="filter-select-object-type" class="custom-select">
+                <option value="">{{_ 'label.all_types'}}</option>
+                {{#each objectGroup as | objectType | }}
+                  <option value="{{objectType.typeId}}"{{#ifEqual objectType.typeId @root.collection.typeId}} selected{{/ifEqual}}>{{objectType.label}}</option>
+                {{/each}}
+              </select>
+            </div>
+          {{/if}}
+          <div>
+            <h3 class="mt-3 mb-1"><i class="fa fa-user"></i> <span>{{_ 'filters.header.created_or_modified_by_me'}}</span></h3>
+            <select id="filter-select-user-edited" class="custom-select">
+              <option value="">{{_ 'label.all_items'}}</option>
+              {{#each editedTypes as | editedType | }}
+                <option value="{{editedType.key}}"{{#ifEqual editedType.key @root.collection.userEdited}} selected{{/ifEqual}}>{{_ editedType.label}}</option>
+              {{/each}}
+            </select>
+            <select id="filter-select-edited-period" class="custom-select{{#unless @root.collection.userEdited}} d-none{{/unless}}">
+              <option value="">{{_ 'label.no_time_restriction'}}</option>
+              {{#each periodTypes as | periodType | }}
+                <option value="{{periodType.key}}"{{#ifEqual periodType.key @root.collection.periodType}} selected{{/ifEqual}}>{{_ periodType.label}}</option>
+              {{/each}}
+            </select>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrapper">
+    <div class="breadcrumbs-container"></div>
+    <div class="table-container"></div>
+    <div class="paging-container"></div>
+  </div>
+</div>

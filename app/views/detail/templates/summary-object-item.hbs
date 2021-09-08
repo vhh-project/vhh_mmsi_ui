@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div  id="{{headerId}}" class="card-header {{className}}">
+    <h5 class="mb-0">
+      <button class="btn btn-block text-left" data-toggle="collapse" data-target="#{{bodyId}}" aria-expanded="{{#if open}}true{{else}}false{{/if}}" aria-controls="{{bodyId}}">
+        {{{label}}}
+      </button>
+    </h5>
+  </div>
+
+  <div id="{{bodyId}}" class="collapse{{#if open}} show{{/if}}" aria-labelledby="{{headerId}}">
+    <div class="card-body"></div>
+  </div>
+</div>

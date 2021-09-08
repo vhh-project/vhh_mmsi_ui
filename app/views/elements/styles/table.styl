@@ -1,0 +1,67 @@
+table.live-table
+  tbody
+    min-height 60px
+
+.table-hover tbody tr:hover td
+  background-color #C3C9DB
+  cursor pointer
+
+table.table
+  thead
+    th
+      background-color #615E5E
+      color #fff
+      border-bottom 2px solid #fff
+      padding 0.25em 0.5em
+      min-width 80px
+      
+      &:not(:first-child)
+        border-left 2px solid #fff
+        
+    th.sortable
+      cursor default
+      
+      &:hover
+        text-decoration underline
+        
+      &:after
+        float right
+        font-family: 'Font Awesome 5 Free'
+        color #aaa
+        content: ' \f0dc'
+      
+      &.sort-asc:after
+        color #fff
+        content: ' \f0dd'
+      
+      &.sort-desc:after
+        color #fff
+        content: ' \f0de'
+        
+  tbody
+    td
+      background-color #E5E5E5
+
+    tr:not(:last-child)
+      td
+        border-bottom 2px solid #fff
+        
+    td
+      &:not(:first-child)
+        border-left 2px solid #fff
+        
+table.table-media
+  td
+    height 90px
+    vertical-align middle
+
+  td.thumb
+    padding 0
+    width 120px
+    height 90px
+    
+    > div.thumb
+      height 100%
+      width 100%
+      background-size cover
+      background-position 50% 50%

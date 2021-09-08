@@ -1,0 +1,37 @@
+<div class="breadcrumbs-container"></div>
+<form id="create-view-form">
+  <div class="row mt-1 mb-3">
+    <div class="col-12 create-form-wrapper">
+      {{#each attrGroups as | attrGroup index |}}
+        <div class="row detail-row" data-index="{{index}}">
+          <div class="col">
+            <div class="card">
+              <div class="card-header" id="detail-card-{{index}}">
+                <h2 class="mb-0">{{#if attrGroup.label}}{{attrGroup.label}}{{else}}{{_ attrGroup.labelCode}}{{/if}}</h2>
+              </div>
+              <div class="card-body">
+                <div class="row detail-attr-row detail-attr-edit" data-index="{{index}}">
+                  {{#each attrGroup.items as | defItem itemIndex |}}
+                    {{> editFormElement defItem=defItem attrIndex='' valueIndex=itemIndex attrKey=attrGroup.key}}
+                  {{/each}}
+                  {{#unlessEqual attrGroup.key 'preferred_labels'}}
+                    <div class="col-lg-12">
+                      <label><small class="text-muted"><em>{{_ 'label.value_source'}}</em></small></label>
+                      <input class="form-control" data-attr-key="{{attrGroup.key}}" data-index="" data-key="_value_source" type="text" value="" />
+                    </div>
+                  {{/unlessEqual}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-2">
+      <button type="submit" class="btn btn-primary">{{_ 'button.create'}}</button>
+      <button type="button" class="btn btn-secondary button-cancel ml-2">{{_ 'button.cancel'}}</button>
+    </div>
+  </div>
+</form>

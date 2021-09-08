@@ -1,0 +1,147 @@
+// nib is a powerful lib for stylus that provides cross-browser css3 mixins.
+// No more vendor prefixes. http://visionmedia.github.com/nib/
+@import 'nib'
+
+// Apply a natural box layout model to all elements.
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+*
+  box-sizing: border-box
+  
+/* roboto-300 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('../fonts/roboto-v20-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('../fonts/roboto-v20-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html
+body
+  height 100%
+
+body
+  padding-top 138px
+  
+@media print
+  body
+    padding-top 0 !important
+    
+#site-container
+  height 100%
+  
+#main-container
+  position relative
+  height 100%
+      
+.spinner-container
+  position absolute
+  left 0
+  top 0
+  bottom 0
+  right 0
+  background rgba(255, 255, 255, 0.8)
+  text-align center
+  z-index 1000
+  
+  &.spinner-container-fixed
+    position fixed
+    left 0
+    top 85px
+    bottom 0
+    right 0
+  
+  > .spinner-border
+    position absolute
+    left 50%
+    margin-left -1rem
+    top 50%
+    margin-top -1rem
+    
+.nav-pills
+  .nav-item
+    a.active:hover
+      color white
+      
+.custom-select option:disabled
+  color #aaa
+  
+.object-creation
+  background-color #D4E2ED !important
+  
+  td
+    background-color #D4E2ED !important
+    
+  &.link-row:hover td
+    background-color #C4D2DD !important
+  
+.object-manifestation
+  background-color #D4EDDE !important
+  
+  td
+    background-color #D4EDDE !important
+    
+  &.link-row:hover td
+    background-color #B4DDCE !important
+    
+.object-item
+  background-color #ECEDD4 !important
+  
+  td
+    background-color #ECEDD4 !important
+    
+  &.link-row:hover td
+    background-color #DCDDC4 !important
+    
+.btn.button-open-link
+.button-open-in-child-window
+  display inline-block
+  font-size 0.5rem
+  line-height 1em
+  color #fff
+  padding 4px
+  border none
+  background-color #6287A6
+  border-radius 2px
+  vertical-align middle
+  
+  &:hover
+    background-color #527490
+    
+  > i
+    margin 0
+    font-size 1.5em
+    line-heihgt 1em
+    
+.button-open-in-child-window
+  &.button-open-in-child-window-active
+    background-color #c90
+    
+.button-toggle-icon
+  &.on
+    i:first-child
+      display none
+      
+  &:not(.on)
+    i:last-child
+      display none
+    
+.tooltip > div
+  text-align left !important
+  
+  > ul
+    padding-left 1em
+    
+.custom-select
+  -webkit-appearance none

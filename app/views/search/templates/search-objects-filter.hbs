@@ -1,0 +1,9 @@
+<div class="mb-3">
+  <h3 class="mt-3 mb-1"><i class="fa fa-camera"></i> <span>{{_ 'filters.header.media_type'}}</span></h3>
+  <select id="filter-select-media" class="custom-select">
+    <option value="all">{{_ 'label.media_types.with_or_without'}}</option>
+    <option value="any"{{#ifEqual collection.mediaType 'any'}} selected{{/ifEqual}}>{{_ 'label.media_types.any'}}</option>
+    <option value="video"{{#ifEqual collection.mediaType 'video'}} selected{{/ifEqual}}>{{_ 'label.media_types.moving_image'}}</option>
+    <option value="image"{{#ifEqual collection.mediaType 'image'}} selected{{/ifEqual}}>{{_ 'label.media_types.image'}}</option>
+  </select>
+</div>
